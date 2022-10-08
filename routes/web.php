@@ -41,7 +41,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 
     Route::middleware('admin')->group(function () {
         //show admin page
-        Route::get('dashboard', [AdminController::class, 'index'])->name('dashboard');
+        Route::get('dashboard', [AdminController::class,'index'])->name('dashboard');
     });
     //logout
     Route::post('logout', [Auth\AuthenticatedSessionController::class, 'destroy'])->name('logout');

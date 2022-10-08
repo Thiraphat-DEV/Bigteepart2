@@ -1,4 +1,4 @@
-{{-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16,7 +16,7 @@
     <x-app-layout>
         <x-slot name="header">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Admin Dashboard') }}
+                {{ __('Admin Dashboard') }} {{Auth::guard('admin')->user()->name}}
             </h2>
         </x-slot>
 
@@ -36,13 +36,13 @@
 </body>
 
 </html>
- --}}
 
 
+{{-- 
 <x-admin-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Admin Dashboard') }}
+            {{ __('Admin Dashboard') }} {{ Auth::guard('admin')->user()->name }}
         </h2>
     </x-slot>
 
@@ -55,4 +55,4 @@
             </div>
         </div>
     </div>
-</x-admin-layout>
+</x-admin-layout> --}}
