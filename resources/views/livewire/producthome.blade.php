@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Whisky Product</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
@@ -39,21 +39,28 @@
             </svg>
           </button>
         </div>
+
         <div class="navbar-collapse collapse grow items-center" id="navbarSupportedContentY">
           <ul class="navbar-nav mr-auto lg:flex lg:flex-row">
+            
+            @if(Route::has('login'))
             <li class="nav-item">
-              <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">Home</a>
+              <a role="button" class="nav-link block pr-2 lg:px-2 py-2 text-primary-200 hover:text-success-100 focus:text-success-100 transition duration-200 ease-in-out "  data-mdb-ripple="true" data-mdb-ripple-color="light" href="{{route('login')}}">SignIn</a>
             </li>
+          @endif  
+          
+          @if(Route::has('register'))
             <li class="nav-item">
-              <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">Features</a>
+              <a role="button" class="nav-link block pr-2 lg:px-2 py-2 text-warning-200 hover:text-primary-100 focus:text-danger-200 transition duration-200 ease-in-out "  data-mdb-ripple="true" data-mdb-ripple-color="light" href="{{route('register')}}">SignUp</a>
             </li>
+            @endif
+
+       
             <li class="nav-item">
-              <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">Pricing</a>
+              <a role="button" class="nav-link block pr-2 lg:px-2 py-2 text-warning-200 hover:text-primary-100 focus:text-danger-200 transition duration-200 ease-in-out "  data-mdb-ripple="true" data-mdb-ripple-color="light" href="{{route('admin.login')}}">Login For Admin</a>
             </li>
-            <li class="nav-item mb-2 lg:mb-0">
-              <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">About</a>
-            </li>
-          </ul>
+        
+         </ul>
         </div>
       </div>
     </nav>
@@ -61,26 +68,17 @@
   
     <!-- Jumbotron -->
     <div class="text-center bg-gray-50 text-gray-800 py-20 px-6">
-      <h1 class="text-5xl font-bold mt-0 mb-6">Heading</h1>
-      <h3 class="text-3xl font-bold mb-8">Subeading</h3>
-      <a class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Get started</a>
+      <h1 class="text-5xl font-bold mt-0 mb-6">Whisky Store By</h1>
+      <h3 class="text-3xl font-bold mb-8">Boat&Name</h3>
+      <a class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">About </a>
     </div>
     <!-- Jumbotron -->
   </header>
 <body>
     <x-app-layout>
-        <x-slot name="header">
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Dashboard') }}
-            </h2>
-        </x-slot>
-    
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8"> 
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 bg-white border-b border-red-200">
-                            <h1 class="text-center" > Wiskey-shop </h1>
-                        <div>
                             <div id="carouselExampleCaptions" class="carousel slide relative mt-10" data-bs-ride="carousel">
                                 <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
                                   <button
@@ -112,30 +110,30 @@
                                       alt="..."
                                     />
                                     <div class="carousel-caption hidden md:block absolute text-center">
-                                      <h5 class="block w-full">First slide label</h5>
-                                      <p>Some representative placeholder content for the first slide.</p>
+                                      <h5 class="block w-full">Bar Whisky</h5>
+                                      <p>Bar Whisky.</p>
                                     </div>
                                   </div>
                                   <div class="carousel-item relative float-left w-full">
                                     <img
-                                      src="https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg"
+                                      src="https://images.unsplash.com/photo-1577695464142-e3a24f4e88f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGFsY29ob2x8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
                                       class="block w-full"
                                       alt="..."
                                     />
                                     <div class="carousel-caption hidden md:block absolute text-center">
-                                      <h5 class="text-xl">Second slide label</h5>
-                                      <p>Some representative placeholder content for the second slide.</p>
+                                      <h5 class="text-xl">Whisky Barrel</h5>
+                                      <p>Whisky Barrel</p>
                                     </div>
                                   </div>
                                   <div class="carousel-item relative float-left w-full">
                                     <img
-                                      src="https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg"
+                                      src="https://images.unsplash.com/photo-1557653472-b6fbb664920f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
                                       class="block w-full"
                                       alt="..."
                                     />
                                     <div class="carousel-caption hidden md:block absolute text-center">
-                                      <h5 class="text-xl">Third slide label</h5>
-                                      <p>Some representative placeholder content for the third slide.</p>
+                                      <h5 class="text-xl">Whisky Beverage</h5>
+                                      <p>Whisky Beverage is </p>
                                     </div>
                                   </div>
                                 </div>

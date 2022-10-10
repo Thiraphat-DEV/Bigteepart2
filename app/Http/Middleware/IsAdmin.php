@@ -4,8 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-class AdminMiddleware
+
+class IsAdmin
 {
     /**
      * Handle an incoming request.
@@ -16,11 +16,12 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
+
         if(auth()->user()->is_admin == 1) {
             //edit to admin page
-            return view('admin.dashboard');
+            return $next($request);
+            // return view('admin.dashboard');
         }
-
-        return redirect('/dashboard')->with('error', 'error for Admin');
+        // return redirect('dashboard')->with('error', 'error for Admin');
     }
 }

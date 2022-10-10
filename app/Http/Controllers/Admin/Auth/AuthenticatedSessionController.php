@@ -30,7 +30,7 @@ class AuthenticatedSessionController extends Controller
     {
 
         //show admin
-        dd($request)->all();
+        // dd($request)->all();
         $request->authenticate();
 
         $request->session()->regenerate();
