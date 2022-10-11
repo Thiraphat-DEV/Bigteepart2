@@ -1,3 +1,5 @@
+<x-app-layout>
+
 <div>
     @include('layouts.flash-message')
     <div class="flex justify-center my-6">
@@ -99,10 +101,13 @@
                                         d="M527.9 32H48.1C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48.1 48h479.8c26.6 0 48.1-21.5 48.1-48V80c0-26.5-21.5-48-48.1-48zM54.1 80h467.8c3.3 0 6 2.7 6 6v42H48.1V86c0-3.3 2.7-6 6-6zm467.8 352H54.1c-3.3 0-6-2.7-6-6V256h479.8v170c0 3.3-2.7 6-6 6zM192 332v40c0 6.6-5.4 12-12 12h-72c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h72c6.6 0 12 5.4 12 12zm192 0v40c0 6.6-5.4 12-12 12H236c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h136c6.6 0 12 5.4 12 12z"
                                     />
                                 </svg>
-                                <span class="ml-2 mt-5px">Procceed to checkout</span>
+                                <span class="ml-2 mt-5px text-green-300">Checkout</span>
                             </button>
-                            <div wire:loading>Processing payment....</div>
-
+                            @if (Session::has('product'))
+                            <div class="bg-green-100 rounded-lg py-5 px-6 mb-4 text-base text-green-700 mb-3" role="alert">
+                            <div wire:loading>Checkout for payment is Success...</div>
+                            </div>
+                        @endif
                         </div>
                     </div>
                 </div>
@@ -110,3 +115,4 @@
         </div>
     </div>
 </div>
+</x-app-layout>

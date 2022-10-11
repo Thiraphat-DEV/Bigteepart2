@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Product;
 use Livewire\Component;
 use App\Models\Shoppingcart as Cart;
 
@@ -50,5 +51,23 @@ class Shoppingcart extends Component
             $this->emit('updateCartCounter');
         }
         session()->flash('success', 'Product Remove from cart!!');
+    }
+    public function checkout() {
+        //check shopping cart for user and product
+        $cart = Cart::with('product')->where('user_id', auth()->id())->get();
+        //select id and quantity and check quantity_left equa product_id
+        $products = Product::select('id', 'qty')->whereIn('id', $cart->pluck('product_id'))->pluck('qty', 'id');
+        //show array for checkout
+        // dd($products);
+        
+        foreach($cart as $cartProduct) {
+            if(!isset($products[$cartProduct->product_id]) || $products[$cartProduct->product_id] <$cartProduct->qty ) {
+                $this->checkout_message = "Error Product is".$cartProduct->product->name. "not in Cart for You";
+            }
+            // $product = Product::find($cartProduct->product_id);
+
+            // if($product || $product->qty < $cartProduct->qty) {
+            // }
+        }
     }
 }

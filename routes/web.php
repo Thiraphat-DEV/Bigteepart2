@@ -4,9 +4,11 @@ use App\Http\Controllers\AdminController;
 use App\Http\Livewire\Shoppingcart;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\BarChartController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PdfController;
 use App\Http\Livewire\Admin\Login;
-
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +24,8 @@ use App\Http\Livewire\Admin\Login;
 Route::get('/', function () {
     return view('welcome');
 });
+//barchart
+Route::get('admin/barchart', [BarChartController::class, 'barChart'])->name("barchart");
 
 //show all product
 Route::get('/dashboard', function () {
@@ -30,6 +34,9 @@ Route::get('/dashboard', function () {
 
 require __DIR__ . '/auth.php';
 
+
+//generate pdf
+Route::get('product-pdf', [PdfController::class, 'index'])->name('product-pdf');
 //shoppingcart
 Route::get('/shoppingcart', Shoppingcart::class)->name('shoppingcart');
 
@@ -39,6 +46,16 @@ Route::get('/admin/dashboard', [LoginController::class, 'dashboard'])->name('adm
 
 Route::get('/admin/login', [LoginController::class, 'index'])->name('admin.login');
 Route::post('/admin/login', [LoginController::class, 'login'])->name('admin.adminlogin');
+
+//Product
+//staff
+Route::get('/admin/add-product', [ProductController::class, 'addProduct']);
+Route::post('/admin/add-product', [ProductController::class, 'storeProduct'])->name('product.store');
+Route::get('/admin/dashboard', [ProductController::class, 'products']);
+Route::get('/admin/edit-product/{id}', [ProductController::class, 'editProduct']);
+Route::put('/admin/edit-product/{id}', [ProductController::class, 'updateProduct']);
+Route::get('/admin/delete-product/{id}', [ProductController::class, 'deleteProduct']);
+
 //Admin
 // Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 //     Route::namespace('Auth')->group(function () {
