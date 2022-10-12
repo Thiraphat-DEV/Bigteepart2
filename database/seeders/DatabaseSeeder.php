@@ -17,30 +17,24 @@ class DatabaseSeeder extends Seeder
         \App\Models\Product::factory(10)->create();
 
 
-        // $user =
-        //     [
+        $user =
+            [
 
-        //         [
-        //             'name' => 'Admin Boat',
-        //             'email' => 'boat@admin.com',
-        //             'is_admin' => '1',
-        //             'password' => bcrypt('password1234')
-        //         ],
-        //         [
-        //             'name' => 'Name',
-        //             'email' => 'name@user.com',
-        //             'is_admin' => '0',
-        //             'password' => bcrypt('password1234')
-        //         ]
-        //     ];
+                [
+                    'name' => 'Admin GET',
+                    'email' => 'get@admin.com',
+                    'is_admin' => '1',
+                    'password' => bcrypt('password1234')
+                ],
+            ];
 
-        //     foreach($user as $key => $value) {
-        //         User::create($value);
-        //     }
-        \App\Models\User::factory()->create([
-            'name' => 'User',
-            'email' => 'user@user.com'
-        ]);
+            foreach($user as $key => $value) {
+                User::create($value);
+            }
+        // \App\Models\User::factory()->create([
+        //     'name' => 'User',
+        //     'email' => 'user@user.com'
+        // ]);
 
         // \App\Models\Admin::factory(1)->create();
         //    $this->call(AdminSeeder::class);

@@ -1,6 +1,10 @@
-<x-app-layout>
 
 <div>
+    @if(Session::has('checkout'))
+    <div class="bg-green-100 rounded-lg py-5 px-6 mb-4 text-base text-green-700 mb-3" role="alert">
+        <div>{{Session::get('checkout')}}</div>
+    </div>   
+    @endif
     @include('layouts.flash-message')
     <div class="flex justify-center my-6">
         <div class="flex flex-col w-full p-8 text-gray-800 bg-white shadow-lg pin-r pin-y md:w-4/5 lg:w-4/5">
@@ -103,16 +107,16 @@
                                 </svg>
                                 <span class="ml-2 mt-5px text-green-300">Checkout</span>
                             </button>
-                            @if (Session::has('product'))
+                            
                             <div class="bg-green-100 rounded-lg py-5 px-6 mb-4 text-base text-green-700 mb-3" role="alert">
                             <div wire:loading>Checkout for payment is Success...</div>
-                            </div>
-                        @endif
+                            </div>   
                         </div>
                     </div>
                 </div>
+
+               
             </div>
         </div>
     </div>
 </div>
-</x-app-layout>

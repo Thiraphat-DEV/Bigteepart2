@@ -12,7 +12,7 @@
 </head>
 
 <body>
-
+    
     <x-app-layout>
 
         @if (Session::has('product_update'))

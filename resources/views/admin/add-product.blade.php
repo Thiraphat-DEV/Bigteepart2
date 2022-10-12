@@ -12,14 +12,11 @@
 </head>
 
 <body>
+  
 
     <x-app-layout>
 
-        @if (Session::has('product_add'))
-            <div class="bg-green-100 rounded-lg py-5 px-6 mb-4 text-base text-green-700 mb-3" role="alert">
-                <div>{{ Session::get('product_add') }} </div>
-            </div>
-        @endif
+   
         <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
             <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -150,8 +147,22 @@
         </div>
     </x-app-layout>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    @if(Session::has('product_add'))
+    <script>
+        toastr.success("{!! Session::get('product_add') !!}");
+    </script>
+    @endif
 
 
+    @if(Session::has('product_add'))
+    <script>
+        swal("Success For Added", "{!! Session::get('product_add') !!}", "success", {
+            button: "OK",
+        });
+    </script>
+    @endif
     <script src="https://cdn.tailwindcss.com"></script>
 
 </body>

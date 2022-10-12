@@ -9,6 +9,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PdfController;
 use App\Http\Livewire\Admin\Login;
 use App\Http\Controllers\ProductController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +23,7 @@ use App\Http\Controllers\ProductController;
 
 //init dashboard
 Route::get('/', function () {
+  
     return view('welcome');
 });
 //barchart

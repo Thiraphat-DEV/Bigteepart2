@@ -12,7 +12,7 @@
 </head>
 
 <body>
-
+    
     <x-app-layout>
         <x-slot name="header">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -46,7 +46,7 @@
                             </a>
                             <a href="{{route('barchart')}}" role="button"
                                 class="inline-block px-6 py-2.5 bg-cyan-500 text-yellow font-medium text-md leading-tight uppercase rounded shadow-md hover:bg-yellow-600 hover:shadow-lg focus:bg-purple-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out mb-3 ">
-                            Watch BarChart   
+                            Watch Charts   
                             </a>
                         </div>
                     

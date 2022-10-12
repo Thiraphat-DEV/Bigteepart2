@@ -14,7 +14,7 @@ class PdfController extends Controller
         $products = Shoppingcart::latest()->paginate(50);
 
         if($req->has('download')) {
-            $generatePdf = PDF::loadView("admin.dashboard", compact('products'))->setOptions(['defaultFont' => 'san-serif']);
+            $generatePdf = PDF::loadView("admin.shoppingcart_pdf", compact('products'))->setOptions(['defaultFont' => 'san-serif']);
             return $generatePdf->download('users.pdf');
         }
 

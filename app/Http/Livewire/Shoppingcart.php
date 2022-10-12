@@ -64,10 +64,7 @@ class Shoppingcart extends Component
             if(!isset($products[$cartProduct->product_id]) || $products[$cartProduct->product_id] <$cartProduct->qty ) {
                 $this->checkout_message = "Error Product is".$cartProduct->product->name. "not in Cart for You";
             }
-            // $product = Product::find($cartProduct->product_id);
-
-            // if($product || $product->qty < $cartProduct->qty) {
-            // }
         }
+        return view('livewire.shoppingcart')->with('checkout', 'Checkout For Successfully');
     }
 }

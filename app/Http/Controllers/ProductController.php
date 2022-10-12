@@ -5,6 +5,7 @@ use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProductController extends Controller
 {
@@ -21,10 +22,11 @@ class ProductController extends Controller
     // store from page to db
     function storeProduct(Request $req)
     {
-        //check image from file
-
+        
         // data from database
         $name = $req->name;
+        //check image from file
+
         $images = $req->file('image');
         $descript = $req->descript;
         $price = $req->price;

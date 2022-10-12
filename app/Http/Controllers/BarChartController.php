@@ -5,18 +5,24 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Admin;
+use Illuminate\Support\Facades\DB;
 class BarChartController extends Controller
 {
     public function barChart() {
-        $chart = Product::select("id" ,"price")->get();
+        $result = DB::table("products")
+        ->select("products.*",DB::raw("COUNT(*) as total_quantity, price"))->orderBy('id')
+        ->join("shoppingcarts","shoppingcarts.product_id","=","products.id")
+        ->groupBy("products.id")
+        ->get();
+        // dd($result);
+        $chartData = "";
 
-        $answer = [ "id", "price"];
-        //loop show data
-
-        foreach($chart as $key => $value) {
-            $answer[++$key] = [(int)$value->id, (double)$value->price];
+        foreach($result as $list) {
+            $chartData.="['".$list->total_quantity."',     ".$list->price."],";
         }
 
-        return view('admin.barchart', compact('answer'));
+        $arr['chartData'] = rtrim($chartData, ",");
+        // echo $chartData;
+        return view('admin.barchart', compact('chartData'));
     }
 }
