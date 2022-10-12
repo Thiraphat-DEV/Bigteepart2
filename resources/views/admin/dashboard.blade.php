@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+
 </head>
 
 <body>
@@ -123,9 +124,8 @@
         {{-- {{ $messages->links('pagination::bootstrap4') }} --}}
     </x-app-layout>
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
+    {{-- <script type="text/javascript">
         document.querySelector('#content').addEventListener('click', function(e) {
 
             if (e.target.matches('#deleteData')) {
@@ -145,7 +145,28 @@
                 });
             }
         })
-    </script>
+    </script> --}}
+
+    {{-- <script>
+        $("#deleteData").click(function(){
+		//alert("test");
+		var id= $(this).attr('rel');
+		//alert(id);
+		var deletefunction= $(this).attr('rel1');
+		//alert(deletefunction);
+		Swal.fire({
+			title: "Are you sure?",
+			text: "You will not be able to recover this record again!",
+			type:"warning",
+			showCancelButton: true,
+			confirmButtonClass: "btn-danger",
+			confirmButtonText: "Yes, delete it!"
+		},
+		function(){
+			window.location.href="/admin/"+deleteFunction+"/"+id;
+		});
+
+    </script> --}}
 
 </body>
 
