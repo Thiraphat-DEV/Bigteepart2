@@ -45,9 +45,9 @@
           ease-in-out
           m-0
           focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                        id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Whisky"
+                        id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your food"
                         name="name" value="{{$product->name}}">
-                    <small id="emailHelp" class="block mt-1 text-xs text-gray-600">Please Enter Your Whisky
+                    <small id="emailHelp" class="block mt-1 text-xs text-gray-600">Please Enter Your food
                         Product.</small>
                 </div>
                 <div class="form-group mb-6">
@@ -67,7 +67,7 @@
           ease-in-out
           m-0
           focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                        id="price" placeholder="Enter Price of Whisky" name="price" value="{{old('price', $product->price)}}">
+                        id="price" placeholder="Enter Price of food" name="price" value="{{old('price', $product->price)}}">
                 </div>
                 <div class="form-group mb-6">
                     <label for="image" class="form-label inline-block mb-2 text-gray-700">Image</label>
@@ -86,7 +86,7 @@
           ease-in-out
           m-0
           focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                        id="exampleInputPassword1" placeholder="Enter Image of Whisky" name="image" onchange="previewFile(this)">
+                        id="exampleInputPassword1" placeholder="Enter Image of food" name="image" onchange="previewFile(this)">
                         <img id="previewImg" src="{{asset('images')}}/{{$product->image}}" alt="">
                 </div>
 
@@ -107,7 +107,7 @@
           ease-in-out
           m-0
           focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                        id="exampleInputPassword1" placeholder="Enter Description for Whisky" name="descript" value="{{old('description', $product->description)}}">
+                        id="exampleInputPassword1" placeholder="Enter Description for food" name="descript" value="{{old('description', $product->description)}}">
                 </div>
 
                 <div class="form-group mb-6">
@@ -129,7 +129,7 @@
         transition
         duration-150
         ease-in-out">Save
-                        Whisky</button>
+                        food</button>
                 </div>
                 <a role="button" href="{{ url('/admin/dashboard') }}"
                     class="
@@ -157,7 +157,7 @@
 
     <script>
         function profileFile(input) {
-            var file = $("input[type=file]").get(0) files[0];
+            var file = $("input[type=file]").get(0).files[0];
             if (file) {
                 var reader = new FileReader();
                 reader.onload = function() {

@@ -40,7 +40,7 @@
                         <div class="card-header text-center text-danger fs-1 alert-info">
                             <a href="/admin/add-product" role="button"
                                 class="inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-md leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out mb-3 ">Add
-                                New Whisky</a> 
+                                New food</a> 
                                    <a href="{{route('product-pdf', ['download' => 'pdf'])}}" role="button"
                                 class="inline-block px-6 py-2.5 bg-yellow-500 text-red font-medium text-md leading-tight uppercase rounded shadow-md hover:bg-yellow-600 hover:shadow-lg focus:bg-purple-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out mb-3 ">
                             Generate Product PDF    
@@ -49,6 +49,7 @@
                                 class="inline-block px-6 py-2.5 bg-cyan-500 text-yellow font-medium text-md leading-tight uppercase rounded shadow-md hover:bg-yellow-600 hover:shadow-lg focus:bg-purple-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out mb-3 ">
                             Watch Charts   
                             </a>
+
                         </div>
                     
                         <div class="overflow-hidden">
@@ -147,27 +148,6 @@
         })
     </script> --}}
 
-    {{-- <script>
-        $("#deleteData").click(function(){
-		//alert("test");
-		var id= $(this).attr('rel');
-		//alert(id);
-		var deletefunction= $(this).attr('rel1');
-		//alert(deletefunction);
-		Swal.fire({
-			title: "Are you sure?",
-			text: "You will not be able to recover this record again!",
-			type:"warning",
-			showCancelButton: true,
-			confirmButtonClass: "btn-danger",
-			confirmButtonText: "Yes, delete it!"
-		},
-		function(){
-			window.location.href="/admin/"+deleteFunction+"/"+id;
-		});
-
-    </script> --}}
-
-</body>
+  </body>
 
 </html>

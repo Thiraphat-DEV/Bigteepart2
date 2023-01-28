@@ -20,7 +20,7 @@ class LoginController extends Controller
     }
 
 
-    public function dashboard() {
+    public function dashboard1() {
         return view('admin.dashboard');
     }
     public function login(Request $req) {
@@ -32,8 +32,9 @@ class LoginController extends Controller
         ]);
 
         if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))) {
-            if(auth()->user()->is_admin == 1) {
-                return redirect()->route('admin.dashboard');
+            if(auth()->user()->is_admin == '1') {
+                // return redirect()->route('admin.dashboard');
+                return redirect()->view('admin.dashboard');
             }else {
                 return redirect()->route('dashboard');
             }

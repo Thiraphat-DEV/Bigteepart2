@@ -43,7 +43,7 @@ Route::get('product-pdf', [PdfController::class, 'index'])->name('product-pdf');
 Route::get('/shoppingcart', Shoppingcart::class)->name('shoppingcart');
 
 //admin
-Route::get('/admin/dashboard', [LoginController::class, 'dashboard'])->name('admin.dashboard');
+Route::get('/admin/dashboard', [LoginController::class, 'login']);
 
 
 Route::get('/admin/login', [LoginController::class, 'index'])->name('admin.login');
